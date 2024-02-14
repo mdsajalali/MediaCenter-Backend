@@ -50,6 +50,25 @@ async function run() {
       res.send(result);
     });
 
+    app.put("/products/:id", async (req, res) => {
+      const id = req.params.id;
+      const body = req.body;
+      const filter = { _id: new ObjectId(id) };
+      const updateProduct = {
+        $set: {
+          image: body.image,
+          name: body.name,
+          brand: body.brand,
+          category: body.category,
+          price: body.price,
+          rating: body.rating,
+          description: body.description,
+        },
+      };
+      const result = await productCollection.updateOne(filter, updateProduct);
+      res.send(result)
+    });
+
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
