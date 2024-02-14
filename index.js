@@ -26,6 +26,11 @@ async function run() {
       .db("media-centerDB")
       .collection("products");
 
+    app.use("/products", async (req, res) => {
+      const result = await productCollection.find().toArray();
+      res.send(result);
+    });
+
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
