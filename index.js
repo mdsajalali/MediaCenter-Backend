@@ -26,8 +26,14 @@ async function run() {
       .db("media-centerDB")
       .collection("products");
 
-    app.use("/products", async (req, res) => {
+    app.get("/products", async (req, res) => {
       const result = await productCollection.find().toArray();
+      res.send(result);
+    });
+
+    app.post("/products", async (req, res) => {
+      const body = req.body;
+      const result = await productCollection.insertOne(body);
       res.send(result);
     });
 
