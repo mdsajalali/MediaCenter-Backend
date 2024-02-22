@@ -25,6 +25,7 @@ async function run() {
     const productCollection = client
       .db("media-centerDB")
       .collection("products");
+    const cartCollection = client.db("media-centerDB").collection("carts");
 
     app.get("/products", async (req, res) => {
       const queryObj = {};
@@ -47,6 +48,13 @@ async function run() {
     app.post("/products", async (req, res) => {
       const body = req.body;
       const result = await productCollection.insertOne(body);
+      res.send(result);
+    });
+
+    // cartCollection apis
+    app.post("/carts", async (req, res) => {
+      const cartItem = req.body;
+      const result = await cartCollection.insertOne(cartItem);
       res.send(result);
     });
 
