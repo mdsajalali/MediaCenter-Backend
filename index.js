@@ -45,12 +45,6 @@ async function run() {
       res.send(result);
     });
 
-    app.post("/products", async (req, res) => {
-      const body = req.body;
-      const result = await productCollection.insertOne(body);
-      res.send(result);
-    });
-
     // cartCollection apis
     app.get("/carts", async (req, res) => {
       const email = req.query.email;
