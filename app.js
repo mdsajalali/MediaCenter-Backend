@@ -14,6 +14,10 @@ app.use(cors());
 app.use("/api/v1/products", productRoute);
 app.use("/api/v1/carts", cartRoute);
 
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Media Center Server is running..." });
+});
+
 // route error not found
 app.use((req, res, next) => {
   res.status(404).json({
