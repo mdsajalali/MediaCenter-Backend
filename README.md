@@ -6,15 +6,14 @@ Welcome to the Media Center Backend repository! This project serves as the backb
 
 - **User Authentication**
 - **User Registration**.
-- **User Profiles**
 
 ### Product Management
 
-- **Product Listing** 
-- **Product Filtering** 
+- **Product Showcase**
+- **Product Filtering**
 - **Product Details**
 
- ## Tech Stack
+## Tech Stack
 
 - Node.js
 - Express.js
