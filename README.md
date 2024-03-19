@@ -1,6 +1,6 @@
-# Media Center Backend
+# Media Center Shop Backend
 
-Welcome to the Media Center Backend repository! This project serves as the backbone for the Media Center system, providing essential functionalities such as product management, user authentication, and more.
+Welcome to the Media Center Shop Backend repository! This project serves as the backbone for the Media Center Shop system, providing essential functionalities such as product management, user authentication, and more.
 
 ### User Management
 
